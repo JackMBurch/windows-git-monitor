@@ -2,12 +2,12 @@
 :Loop
 	ECHO Checking for updates...
 	SET total=0
-	CALL:Check Repo1 master JackMBurch
-	CALL:Check Repo2 development
-	CALL:Check Repo3
-	CALL:Check Repo4
-	CALL:Check Repo5
-	CALL:Check Repo6
+	CALL:Check ${REPO1} master JackMBurch
+	CALL:Check ${REPO2} development
+	CALL:Check ${REPO3}
+	CALL:Check ${REPO4}
+	CALL:Check ${REPO5}
+	CALL:Check ${REPO6}
 	IF NOT %total%==6 GOTO Update
 	GOTO Loop
 	
