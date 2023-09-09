@@ -2,7 +2,7 @@
 :Loop
 	ECHO Checking for updates...
 	SET total=0
-	CALL:Check ${REPO1} master JackMBurch
+	CALL:Check ${REPO1} master ${GITHUB_USER}
 	CALL:Check ${REPO2} development
 	CALL:Check ${REPO3}
 	CALL:Check ${REPO4}
@@ -18,7 +18,7 @@
 :Update
 	ECHO Updating...
 	timeout /t 30 /nobreak > NUL
-	CD /d ${DEPLOY_DIR}
+	CD /d ${DEPLOYMENT_DIR}
 	ECHO %cd%
 	START "" deploy.bat
 	GOTO Exit
